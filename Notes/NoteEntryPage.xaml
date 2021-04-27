@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Notes.NoteEntryPage"
+             Title="Note Entry">
+<ScrollView>
+    <StackLayout Margin="20">
+        <Editor Placeholder="Name of the Food"
+                Text="{Binding Food}"
+                HeightRequest="50" />
+        <Editor Placeholder="Chef's Name"
+                Text="{Binding Chef}"
+                HeightRequest="50" />
+        <Label Text="Ingredients"/>
+        <Editor Placeholder="Pasta, Tomato Paste, Spices and Herbs"
+                Text="{Binding Ingredients}"
+                HeightRequest="100" />
+        <Label Text="Steps"/>
+        <Editor Placeholder="1."
+                Text="{Binding Steps}"
+                HeightRequest="100" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="Save" 
+                    Clicked="OnSaveButtonClicked" />
+            <Button Grid.Column="1"
+                    Text="Delete" 
+                    Clicked="OnDeleteButtonClicked"/>
+        </Grid>
+    </StackLayout>
+</ScrollView>
+</ContentPage>
